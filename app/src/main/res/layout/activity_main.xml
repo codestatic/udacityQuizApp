@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80D8FF">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/title_text_view"
+            style="@style/mainHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/mainTitle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- rare skin question card view -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/rare_skin_card"
+            style="@style/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_text_view">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/rare_skin_image_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:contentDescription="@string/rare_skin_image_description"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/fortnite_skin"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/rare_skin_question_text"
+                    style="@style/questionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rareSkinQuestion"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rare_skin_image_view" />
+
+                <View
+                    android:id="@+id/rare_skin_break"
+                    style="@style/cardLineBreak"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rare_skin_question_text" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rare_skin_break">
+
+                    <RadioButton
+                        style="@style/radioButtons"
+                        android:id="@+id/radio_renegade_raider"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/renegade_raider"
+                        android:onClick="rareSkinRadioClick"/>
+
+                    <RadioButton
+                        style="@style/radioButtons"
+                        android:id="@+id/radio_assault_trooper"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/arial_assault_trooper"
+                        android:onClick="rareSkinRadioClick"/>
+
+                    <RadioButton
+                        style="@style/radioButtons"
+                        android:id="@+id/radio_skull_trooper"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/purple_skull_trooper"
+                        android:onClick="rareSkinRadioClick"/>
+                </RadioGroup>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- strongest weapon question card view -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/weapon_card"
+            style="@style/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rare_skin_card">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/weapon_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/weapon_image_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:contentDescription="@string/rare_skin_image_description"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/weapon_colours"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/weapon_question_text"
+                    style="@style/questionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/weapon_question"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/weapon_image_view" />
+
+                <View
+                    android:id="@+id/weapon_break"
+                    style="@style/cardLineBreak"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/weapon_question_text" />
+
+                <EditText
+                    android:id="@+id/text_weapon_answer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/text_answer_hint"
+                    style="@style/answer"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/weapon_break" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- landing zone question card view -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/landing_zone_card"
+            style="@style/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weapon_card">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/landing_zone_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/landing_zone_image_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:contentDescription="@string/rare_skin_image_description"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/landing_zones"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/landing_zone_question_text"
+                    style="@style/questionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/landing_zone_question"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/landing_zone_image_view" />
+
+                <View
+                    android:id="@+id/landing_zone_break"
+                    style="@style/cardLineBreak"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/landing_zone_question_text" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/landing_zone_break">
+
+                    <RadioButton
+                        android:id="@+id/radio_salty_towers"
+                        style="@style/radioButtons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/salty_towers"
+                        android:onClick="landingZoneRadioClick"/>
+
+                    <RadioButton
+                        android:id="@+id/radio_lazy_lake"
+                        style="@style/radioButtons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lazy_lake"
+                        android:onClick="landingZoneRadioClick"/>
+
+                    <RadioButton
+                        android:id="@+id/radio_pleasant_park"
+                        style="@style/radioButtons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pleasant_park"
+                        android:onClick="landingZoneRadioClick"/>
+                </RadioGroup>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- pick axe question card view -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/pick_axe_card"
+            style="@style/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/landing_zone_card">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/pick_axe_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/pick_axe_image_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:contentDescription="@string/rare_skin_image_description"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/pick_axe"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/pick_axe_question_text"
+                    style="@style/questionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pick_axe_question"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pick_axe_image_view" />
+
+                <View
+                    android:id="@+id/pick_axe_break"
+                    style="@style/cardLineBreak"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pick_axe_question_text" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pick_axe_break">
+
+                    <RadioButton
+                        android:id="@+id/radio_levathon"
+                        style="@style/radioButtons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/levathon"
+                        android:onClick="pickAxeRadioClick"/>
+
+                    <RadioButton
+                        android:id="@+id/radio_driver"
+                        style="@style/radioButtons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/driver"
+                        android:onClick="pickAxeRadioClick"/>
+
+                    <RadioButton
+                        android:id="@+id/radio_star_wand"
+                        style="@style/radioButtons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/star_wand"
+                        android:onClick="pickAxeRadioClick"/>
+
+                </RadioGroup>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- llama question card view -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/llama_card"
+            style="@style/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pick_axe_card">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/llama_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/llama_image_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:contentDescription="@string/rare_skin_image_description"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/llama"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/llama_question_text"
+                    style="@style/questionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/llama_question"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llama_image_view" />
+
+                <View
+                    android:id="@+id/llama_break"
+                    style="@style/cardLineBreak"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llama_question_text" />
+
+                <CheckBox
+                    android:id="@+id/loot_llama_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/loot_llama_answer"
+                    style="@style/checkBox"
+                    android:onClick="checkBoxClick"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llama_break"/>
+
+                <CheckBox
+                    android:id="@+id/llama_llama_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/llama_llama_answer"
+                    android:onClick="checkBoxClick"
+                    style="@style/checkBox"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/loot_llama_checkbox"/>
+
+                <CheckBox
+                    android:id="@+id/pinata_llama_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pinata_llama_answer"
+                    android:onClick="checkBoxClick"
+                    style="@style/checkBox"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llama_llama_checkbox"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- strongest building material question card view -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/material_card"
+            style="@style/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llama_card">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/material_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/material_image_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:contentDescription="@string/rare_skin_image_description"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/materials"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/material_question_text"
+                    style="@style/questionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/building_material_question"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/material_image_view" />
+
+                <View
+                    android:id="@+id/material_break"
+                    style="@style/cardLineBreak"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/material_question_text" />
+
+                <EditText
+                    android:id="@+id/text_material_answer"
+                    style="@style/answer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/text_answer_hint"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/material_break" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/bottom_header_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bottom_header"
+            android:layout_marginTop="8dp"
+            style="@style/mainHeader"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/material_card"/>
+
+        <Button style="@style/submitButton"
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/check_answers_button_text"
+            android:layout_marginBottom="32dp"
+            android:onClick="submitAnswers"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bottom_header_text"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,43 @@
+<resources>
+    <!-- main app strings -->
+    <string name="app_name">FortniteQuiz</string>
+    <string name="mainTitle">Door will open in 5, 4, 3…</string>
+
+    <!-- rare skin question card strings -->
+    <string name="rareSkinQuestion">What is the rarest skin in the game?</string>
+    <string name="arial_assault_trooper">Arial assault trooper</string>
+    <string name="renegade_raider">Renegade raider</string>
+    <string name="purple_skull_trooper">Purple skull trooper</string>
+    <string name="rare_skin_image_description">fortnite character line up</string>
+
+    <!-- coloured weapon question card strings -->
+    <string name="weapon_question">What is the colour of the strongest weapons in Fortnite?</string>
+    <string name="text_answer_hint">Answer</string>
+
+    <!-- landing zone question strings -->
+    <string name="landing_zone_question">What is the most popular landing zone?</string>
+    <string name="salty_towers">Salty Towers</string>
+    <string name="lazy_lake">Lazy Lake</string>
+    <string name="pleasant_park">Pleasant Park</string>
+
+    <!-- pick axe question strings -->
+    <string name="pick_axe_question">What is the most popular pick axe in Fortnite?</string>
+    <string name="star_wand">Star Wand</string>
+    <string name="levathon">Levathon</string>
+    <string name="driver">Driver</string>
+
+    <!-- llama question strings -->
+    <string name="llama_question">What is the name of the Llama?</string>
+    <string name="loot_llama_answer">Loot Llama</string>
+    <string name="llama_llama_answer">Llama Llama</string>
+    <string name="pinata_llama_answer">Pinata Llama</string>
+
+    <!-- building material question strings -->
+    <string name="building_material_question">What is the strongest building material in Fortnite?</string>
+
+    <!-- bottom header -->
+    <string name="bottom_header">Don\'t forget to thank the bus driver!</string>
+
+    <!-- submit answer button string -->
+    <string name="check_answers_button_text">Check Answers</string>
+</resources>

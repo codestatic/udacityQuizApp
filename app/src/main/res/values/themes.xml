@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.FortniteQuiz" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#03A9F4</item>
+        <item name="colorPrimaryVariant">#0288D1</item>
+        <item name="colorOnPrimary">#B39DDB</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#9C27B0</item>
+        <item name="colorSecondaryVariant">#7B1FA2</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>
